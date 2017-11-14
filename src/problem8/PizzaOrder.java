@@ -3,12 +3,28 @@ package problem8;
 import java.text.NumberFormat;
 
 public class PizzaOrder {
-	int numPizzas = 1;
+	private int numPizzas = 1;
 	double totalCost = 0.0;
 	Pizza pizza1 = new Pizza();
 	Pizza pizza2 = new Pizza();
 	Pizza pizza3 = new Pizza();
 	NumberFormat moneyFormatter = NumberFormat.getCurrencyInstance();
+
+	public int getNumPizzas() {
+		return numPizzas;
+	}
+
+	public Pizza getPizza1() {
+		return new Pizza(pizza1);
+	}
+
+	public Pizza getPizza2() {
+		return new Pizza(pizza2);
+	}
+
+	public Pizza getPizza3() {
+		return new Pizza(pizza3);
+	}
 
 	public void setNumPizzas(int inputNumPizzas) {
 		if (inputNumPizzas >= 1 && inputNumPizzas <= 3)

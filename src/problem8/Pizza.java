@@ -88,6 +88,13 @@ public class Pizza {
 
 	}
 
+	public Pizza(Pizza pizza) {
+		setSize(pizza.size);
+		setCheese(pizza.numCheese);
+		setPepperoni(pizza.numPepperoni);
+		setHam(pizza.numHam);
+	}
+
 	public Pizza(int inputSize) {
 		setSize(inputSize);
 	}
