@@ -15,15 +15,15 @@ public class PizzaOrder {
 	}
 
 	public Pizza getPizza1() {
-		return new Pizza(pizza1);
+		return pizza1;
 	}
 
 	public Pizza getPizza2() {
-		return new Pizza(pizza2);
+		return pizza2;
 	}
 
 	public Pizza getPizza3() {
-		return new Pizza(pizza3);
+		return pizza3;
 	}
 
 	public void setNumPizzas(int inputNumPizzas) {
@@ -65,15 +65,15 @@ public class PizzaOrder {
 	}
 
 	public void setPizza1(Pizza inputPizza) {
-		pizza1 = inputPizza;
+		pizza1 = new Pizza(inputPizza);
 	}
 
 	public void setPizza2(Pizza inputPizza) {
-		pizza2 = inputPizza;
+		pizza2 = new Pizza(inputPizza);
 	}
 
 	public void setPizza3(Pizza inputPizza) {
-		pizza3 = inputPizza;
+		pizza3 = new Pizza(inputPizza);
 	}
 
 	public double calcTotal() {
@@ -94,11 +94,20 @@ public class PizzaOrder {
 		System.out.println(moneyFormatter.format(calcTotal()));
 	}
 
-	PizzaOrder() {
+	public PizzaOrder() {
 		placeOrder();
 	}
 
-	PizzaOrder(int inputNumPizzas) {
+	public PizzaOrder(int inputNumPizzas) {
+		setNumPizzas(inputNumPizzas);
 		placeOrder(inputNumPizzas);
+	}
+
+	public PizzaOrder(PizzaOrder pizzaOrder) {
+		setNumPizzas(pizzaOrder.numPizzas);
+		placeOrder(pizzaOrder.numPizzas);
+		setPizza1(pizzaOrder.pizza1);
+		setPizza2(pizzaOrder.pizza2);
+		setPizza3(pizzaOrder.pizza3);
 	}
 }
